@@ -1,12 +1,11 @@
 <p>All tasks</p>
 
 <div class="tasks">
-  <% @tasks.each do |task| %>
-    <div class="task">
-      <div class="task__title"><%= link_to task.title, task %></div>
-      <div class="task__notes"><%= task.notes %></div>
-      <div class="task__record">...</div>
-      <div class="task__controls"></div>
-    </div>
-  <% end %>
+    <% @tasks.each do |task| %>
+      <%= render task %>
+    <% end %>
+
+</div>
+<div class="task">
+  <%= link_to "+", tasks_path(:title => "title"), :method => :post, :remote => true, :id => "create" %>
 </div>

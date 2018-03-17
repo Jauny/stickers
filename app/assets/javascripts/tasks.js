@@ -17,4 +17,18 @@ window.onload = function() {
       console.log('back');
     }
   }
+
+  // need to stop propagation on title link
+  const titles = document.getElementsByClassName('task__title');
+  for (title of titles) {
+    title.onclick = function(e) {
+      e.stopPropagation();
+      window.location = e.target.href;
+    }
+  }
+
+  const create = document.getElementById('create');
+  create.addEventListener('ajax:success', (e, data) => {
+    e.stopPropagation();
+  })
 }

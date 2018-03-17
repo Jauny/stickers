@@ -1,0 +1,3 @@
+const tasks = document.getElementsByClassName('tasks')[0];
+
+tasks.innerHTML += "<%= escape_javascript(render @task) %>";

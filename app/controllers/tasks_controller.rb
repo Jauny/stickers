@@ -6,4 +6,15 @@ class TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
   end
+
+  def create
+    @task = Task.create(:title => "title")
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def destroy
+    Task.delete(params[:id])
+  end
 end
