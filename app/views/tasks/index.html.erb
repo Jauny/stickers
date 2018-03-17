@@ -3,7 +3,7 @@
 <div class="tasks">
   <% @tasks.each do |task| %>
     <div class="task">
-      <div class="task__title"><%= task.title %></div>
+      <div class="task__title"><%= link_to task.title, task %></div>
       <div class="task__notes"><%= task.notes %></div>
       <div class="task__record">...</div>
       <div class="task__controls"></div>
