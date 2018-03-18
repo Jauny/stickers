@@ -10,7 +10,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.create(:title => "title")
     respond_to do |format|
-      format.js
+      format.json
     end
   end
 
